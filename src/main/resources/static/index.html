@@ -34,6 +34,12 @@
             text-align: center;
         }
     </style>
+    <script>
+        function goToMovie() {
+            const date = new Date().toISOString().slice(0, 10).replace(/-/g, ''); // YYYYMMDD 형식
+            location.href = `/movies/daily-box-office?date=${date}`;
+        }
+    </script>
 </head>
 <body>
 <header>
@@ -46,6 +52,7 @@
     </div>
     <div class="main">
         <button type="submit" onclick="location.href='/sub'">Go to Sub</button>
+        <button type="button" onclick="location.href='/movies/daily-box-office'">Go to Movie</button>
     </div>
 </div>
 <footer>
