@@ -35,7 +35,7 @@ public class MovieController {
         // 영화진흥회 API에서 데이터 가져오기
         String result = movieService.getDailyBoxOffice(date);
 
-        // JSON 파싱 (간단한 예제)
+        // JSON 파싱
         ObjectMapper objectMapper = new ObjectMapper();
         Map<String, Object> data;
         try {
@@ -46,7 +46,7 @@ public class MovieController {
         }
 
         // Thymeleaf로 데이터 전달
-        model.addAttribute("movieData", data);
+        model.addAttribute("0movieData", data);
         return "movies";  // movies.html로 이동
     }
 }
