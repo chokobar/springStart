@@ -46,7 +46,7 @@ public class MovieController {
         }
 
         // Thymeleaf로 데이터 전달
-        model.addAttribute("0movieData", data);
+        model.addAttribute("movieData", data);
         return "movies";  // movies.html로 이동
     }
 }
