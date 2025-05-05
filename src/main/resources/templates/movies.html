@@ -17,12 +17,14 @@
     <th>순위</th>
     <th>영화 제목</th>
     <th>누적 관객 수</th>
+    <th>영화 개볼일</th>
     <th>누적 매출액</th>
   </tr>
   <tr th:each="movie : ${movieData.boxOfficeResult.dailyBoxOfficeList}">
     <td th:text="${movie.rank}"></td>
     <td th:text="${movie.movieNm}"></td>
     <td th:text="${#numbers.formatInteger(movie.audiAcc, 3, 'COMMA') + ' 명'}"></td>
+    <td th:text="${movie.openDt}"></td>
     <td th:text="${#numbers.formatInteger(movie.salesAcc, 3, 'COMMA') + ' 원'}"></td>
   </tr>
 </table>

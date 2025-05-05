@@ -19,13 +19,13 @@ import java.time.format.DateTimeFormatter;
 import java.util.Map;
 
 @Controller
-@RequestMapping("/movies")
+//@RequestMapping("/movies")
 public class MovieController {
 
     @Autowired
     private MovieService movieService;
 
-    @GetMapping("/daily-box-office")
+    @GetMapping("/")
     public String getDailyBoxOffice(@RequestParam(required = false) String date, Model model) {
         // 날짜가 없으면 기본값으로 어제 날짜 사용
         if (date == null || date.isEmpty()) {
@@ -42,11 +42,11 @@ public class MovieController {
             data = objectMapper.readValue(result, new TypeReference<>() {});
         } catch (Exception e) {
             model.addAttribute("error", "데이터를 불러오는 데 실패했습니다.");
-            return "movies";
+            return "index";
         }
 
         // Thymeleaf로 데이터 전달
         model.addAttribute("movieData", data);
-        return "movies";  // movies.html로 이동
+        return "index";  // movies.html로 이동
     }
 }
