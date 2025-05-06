@@ -47,6 +47,6 @@ public class MovieController {
 
         // Thymeleaf로 데이터 전달
         model.addAttribute("movieData", data);
-        return "index";  // movies.html로 이동
+        return "index";  // index.html로 이동
     }
 }
